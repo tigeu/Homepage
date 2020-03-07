@@ -38,6 +38,18 @@ dependencies {
 	testImplementation 'org.springframework.security:spring-security-test'
 }
 
+apply plugin: 'checkstyle'
+checkstyle {
+	toolVersion '8.29'
+	configFile file("config/checkstyle/checkstyle.xml")
+}
+checkstyleMain {
+	source = 'src/main/java'
+}
+checkstyleTest {
+	source = 'src/test/java'
+}
+
 test {
 	useJUnitPlatform()
 }
