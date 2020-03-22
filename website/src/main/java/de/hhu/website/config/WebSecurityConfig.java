@@ -1,33 +1,45 @@
 package de.hhu.website.config;
 
+import org.keycloak.adapters.springsecurity.KeycloakSecurityComponents;
+import org.keycloak.adapters.springsecurity.authentication.KeycloakAuthenticationProvider;
+import org.keycloak.adapters.springsecurity.config.KeycloakWebSecurityConfigurerAdapter;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.security.config.annotation.authentication.builders.AuthenticationManagerBuilder;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
-import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
+import org.springframework.security.core.authority.mapping.SimpleAuthorityMapper;
+import org.springframework.security.core.session.SessionRegistryImpl;
+import org.springframework.security.web.authentication.session.RegisterSessionAuthenticationStrategy;
+import org.springframework.security.web.authentication.session.SessionAuthenticationStrategy;
 
 @Configuration
 @EnableWebSecurity
-public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
+@ComponentScan(basePackageClasses = KeycloakSecurityComponents.class)
+class WebSecurityConfig extends KeycloakWebSecurityConfigurerAdapter {
 
   @Autowired
-  public void globalSecurityConfiguration(AuthenticationManagerBuilder auth) throws Exception {
-    auth.inMemoryAuthentication().withUser("user").password("{noop}user").roles("USER");
-    auth.inMemoryAuthentication().withUser("admin").password("{noop}admin").roles("USER", "ADMIN");
+  public void configureGlobal(AuthenticationManagerBuilder auth) {
+    KeycloakAuthenticationProvider keycloakAuthenticationProvider = keycloakAuthenticationProvider();
+    keycloakAuthenticationProvider.setGrantedAuthoritiesMapper(new SimpleAuthorityMapper());
+    auth.authenticationProvider(keycloakAuthenticationProvider);
   }
 
+  @Bean
+  @Override
+  protected SessionAuthenticationStrategy sessionAuthenticationStrategy() {
+    return new RegisterSessionAuthenticationStrategy(new SessionRegistryImpl());
+  }
+
+  @Override
   protected void configure(HttpSecurity http) throws Exception {
-    http
-            .authorizeRequests()
-            .antMatchers("/home").permitAll()
-            .anyRequest().authenticated()
-            .and()
-            .formLogin()
-            .loginPage("/login")
-            .permitAll()
-            .and()
-            .logout()
+    super.configure(http);
+    http.authorizeRequests()
+            .antMatchers("/home*")
+            .hasRole("user")
+            .anyRequest()
             .permitAll();
   }
 
