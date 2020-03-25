@@ -5,18 +5,12 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 
 @Controller
-public class HomeController {
+public class AdminController {
 
-  @GetMapping("/")
-  @Secured("ROLE_user")
-  public String index() {
-    return "redirect:home";
-  }
-
-  @GetMapping("/home")
-  @Secured("ROLE_user")
-  public String home() {
-    return "home";
+  @GetMapping("/admin")
+  @Secured("ROLE_admin")
+  public String admin() {
+    return "admin";
   }
 
 }
