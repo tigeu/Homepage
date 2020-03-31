@@ -15,7 +15,11 @@ public class ErrorController implements org.springframework.boot.web.servlet.err
     return "/error";
   }
 
-
+  /** This method is handling some basic errors, which could occur during browsing.
+   *
+   * @param request this returns the ERROR-CODE.
+   * @return this returns the appropriate html-view.
+   */
   @RequestMapping("/error")
   public String handleError(HttpServletRequest request) {
     Object status = request.getAttribute(RequestDispatcher.ERROR_STATUS_CODE);
