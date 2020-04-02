@@ -25,7 +25,7 @@ import org.springframework.security.web.authentication.session.SessionAuthentica
 class WebSecurityConfig extends KeycloakWebSecurityConfigurerAdapter {
 
   @Autowired
-  public void configureGlobal(AuthenticationManagerBuilder auth) {
+  public void configureGlobal(final AuthenticationManagerBuilder auth) {
     KeycloakAuthenticationProvider keycloakAuthenticationProvider = keycloakAuthenticationProvider();
     keycloakAuthenticationProvider.setGrantedAuthoritiesMapper(new SimpleAuthorityMapper());
     auth.authenticationProvider(keycloakAuthenticationProvider);
@@ -38,7 +38,7 @@ class WebSecurityConfig extends KeycloakWebSecurityConfigurerAdapter {
   }
 
   @Override
-  protected void configure(HttpSecurity http) throws Exception {
+  protected void configure(final HttpSecurity http) throws Exception {
     super.configure(http);
     http.authorizeRequests()
         .antMatchers("/")
