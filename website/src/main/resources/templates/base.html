@@ -74,6 +74,34 @@
 <main th:fragment="bodycontent">
     <div th:replace="${content} ?: ~{}"></div>
 </main>
-
+<footer class="jumbotron footer-fixed">
+    <div class="container">
+        <div class="row row-10">
+            <div class="col-md-4 col-xl-5">
+                <div class="pr-xl-4">
+                    <p>Dies ist ein Projekt von unserem Team ...</p>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <h5>Kontaktieren Sie uns!</h5>
+                <dl class="contact-list">
+                    <dt>Adresse:</dt>
+                    <dd>40210 Düsseldorf, Deutschland</dd>
+                </dl>
+                <dl class="contact-list">
+                    <dt>E-Mail:</dt>
+                    <dd><a href="mailto:#">homepage.itguys@gmail.com</a></dd>
+                </dl>
+            </div>
+            <div class="col-md-4 col-xl-3">
+                <h5>Links</h5>
+                <ul class="nav-list">
+                    <li><a href="#">Beispiel 1</a></li>
+                    <li><a href="#">Beispiel 2</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</footer>
 </body>
 </html>
