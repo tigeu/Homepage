@@ -69,7 +69,8 @@ apply plugin: 'pmd'
 pmd {
     ruleSets = [
             "category/java/errorprone.xml",
-            "category/java/bestpractices.xml"
+            "category/java/bestpractices.xml",
+            "category/java/codestyle.xml"
     ]
 }
 
