@@ -1,0 +1,4 @@
+Dokumentation für Keycloak in Verbindung mit docker-compose:
+- Bei sämtlichen Änderungen der keycloak Konfiguration muss folgender Ordner manuell gelöscht werden
+ var/lib/docker/volumes/homepage_postgres_data
+
