@@ -18,7 +18,7 @@
     <hr>
 
     <button type="button" class="btn btn-primary pull-right"
-            id="newArticleButton" onclick="openForm()">Erstelle Sie einen neuen Artikel
+            id="newArticleButton" onclick="openForm('newArticleForm')" >Erstelle Sie einen neuen Artikel
     </button>
 
     <div class="form-group form-popup" id="newArticleForm">
@@ -46,9 +46,10 @@
                 id="submitArticleButton">Erstellen
         </button>
         <button type="button" class="btn btn-primary pull-right"
-                id="closeArticleButton" onclick="closeForm()">Schließen
+                id="closeArticleButton" onclick="closeForm('newArticleForm')">Schließen
         </button>
     </div>
 </div>
+
 </body>
 </html>

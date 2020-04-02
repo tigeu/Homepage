@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en"
       xmlns:th="http://www.thymeleaf.org">
+
 <head>
     <!-- meta tags-->
     <th:block th:fragment="headcontent">
@@ -18,7 +19,12 @@
 
 
         <!-- Personal CSS -->
-        <link href="../static/css/stylesheetdefault.css" rel="stylesheet" th:href="@{/css/stylesheetdefault.css}">
+        <link href="../static/cssPersonal/stylesheetdefault.css" rel="stylesheet" th:href="@{/cssPersonal/stylesheetdefault.css}">
+
+        <!-- Personal JS -->
+        <script src="../static/jsPersonal/htmlfunctions.js" type="text/javascript" th:src="@{/jsPersonal/htmlfunctions.js}"></script>
+
+
 
         <!-- Optional JavaScript -->
         <!-- Remember to include jQuery :) -->
@@ -64,31 +70,10 @@
         </div>
     </nav>
 
-
 </header>
 <main th:fragment="bodycontent">
     <div th:replace="${content} ?: ~{}"></div>
 </main>
 
-
-
-
-
-
-
-
-<!-- JavaScript extensions for the following HTML´s-->
-
-
-<!-- Open hidden form, and close it-->
-<script>
-    function openForm() {
-        document.getElementById("newArticleForm").style.display = "block";
-    }
-
-    function closeForm() {
-        document.getElementById("newArticleForm").style.display = "none";
-    }
-</script>
 </body>
 </html>
