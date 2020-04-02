@@ -10,9 +10,9 @@ class WebsiteApplicationTests {
 
   @Test
   // This test is Spring standard and works correctly without assert
-  // and method contextLoads must not be package private
+  // Method contextLoads must not be package private
   @SuppressWarnings({"PMD.JUnitTestsShouldIncludeAssert", "PMD.DefaultPackage"})
-  void contextLoads() {
+    /* default */ void contextLoads() {
   }
 
 }
