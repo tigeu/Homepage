@@ -20,6 +20,8 @@ import org.springframework.security.web.authentication.session.SessionAuthentica
 @Configuration
 @EnableWebSecurity
 @ComponentScan(basePackageClasses = KeycloakSecurityComponents.class)
+// Warning suppressed because this is a configuration class and does not need constructor
+@SuppressWarnings("PMD.AtLeastOneConstructor")
 class WebSecurityConfig extends KeycloakWebSecurityConfigurerAdapter {
 
   @Autowired
@@ -39,8 +41,8 @@ class WebSecurityConfig extends KeycloakWebSecurityConfigurerAdapter {
   protected void configure(HttpSecurity http) throws Exception {
     super.configure(http);
     http.authorizeRequests()
-            .antMatchers("/")
-            .permitAll();
+        .antMatchers("/")
+        .permitAll();
   }
 
   /*
@@ -52,9 +54,9 @@ class WebSecurityConfig extends KeycloakWebSecurityConfigurerAdapter {
    */
   @Configuration
   @EnableGlobalMethodSecurity(
-          prePostEnabled = true,
-          securedEnabled = true,
-          jsr250Enabled = true)
+      prePostEnabled = true,
+      securedEnabled = true,
+      jsr250Enabled = true)
   public static class MethodSecurityConfig extends GlobalMethodSecurityConfiguration {
   }
 
