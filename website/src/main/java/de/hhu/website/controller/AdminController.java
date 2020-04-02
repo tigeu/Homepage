@@ -10,13 +10,18 @@ import org.springframework.web.bind.annotation.GetMapping;
 // Warning suppressed because controller classes don't need constructors
 @SuppressWarnings("PMD.AtLeastOneConstructor")
 public class AdminController {
-  public final static Logger logger = LoggerFactory.getLogger(AdminController.class);
+  private static final Logger LOGGER = LoggerFactory.getLogger(AdminController.class);
 
+  /**
+   * All getRequest on /admin are redirected to this method.
+   *
+   * @return a view of the admin page.
+   */
   @GetMapping("/admin")
   @Secured("ROLE_admin")
   public String admin() {
-    logger.info("The admin page has been loaded by admin.");
-    logger.error("An error has occurred while loading the admin page by admin.");
+    LOGGER.info("The admin page has been loaded by admin.");
+    LOGGER.error("An error has occurred while loading the admin page by admin.");
     return "admin";
   }
 

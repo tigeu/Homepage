@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 // Warning suppressed because controller classes don't need constructors
 @SuppressWarnings("PMD.AtLeastOneConstructor")
 public class HomeController {
-  final static Logger logger = LoggerFactory.getLogger(HomeController.class);
+  private static final Logger LOGGER = LoggerFactory.getLogger(HomeController.class);
 
   @GetMapping("/")
   @Secured("ROLE_user")
@@ -21,6 +21,7 @@ public class HomeController {
   @GetMapping("/home")
   @Secured("ROLE_user")
   public String home() {
+    LOGGER.info("The home page has been loaded by user.");
     return "home";
   }
 
