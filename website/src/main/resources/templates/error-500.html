@@ -1,19 +1,19 @@
 <!DOCTYPE html>
 <html lang="en"
+      th:replace="~{error-base :: html(contentErrorBase=~{:: mycontentErrorBase})}"
       xmlns:th="http://www.thymeleaf.org">
-<head>
-    <th:block th:fragment="headcontent">
-        <meta charset="UTF-8">
-        <title>Title</title>
-    </th:block>
 
-    <title>Error 500</title>
+<head>
+    <!-- meta tags-->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <title>Admin</title>
 </head>
 <body>
-<div class="container">
-    <h4>ERROR 500</h4>
-    <h2><a href="javascript:history.back()">Hier geht's zurück</a></h2>
-</div>
+<div class="container" id="contentErrorBase" th:fragment="mycontentErrorBase">
+    <label class="lead">ERROR-500</label>
 
+</div>
 </body>
 </html>
