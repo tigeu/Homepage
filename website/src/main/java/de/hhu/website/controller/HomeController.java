@@ -5,6 +5,8 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 
 @Controller
+// Warning suppressed because controller classes don't need constructors
+@SuppressWarnings("PMD.AtLeastOneConstructor")
 public class HomeController {
 
   @GetMapping("/")
