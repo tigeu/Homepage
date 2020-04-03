@@ -12,7 +12,7 @@ Our goal is to expand our skills and competencies in the field of software devel
 ** At first you should clone our project https://github.com/tigeu/Homepage.git[here].
 * Setup
 ** Run the Docker-Compose File to ensure that the Database and Keycloak are running
-`docker-compose -f docker-compose-dev.yml up`
+`docker-compose -f docker-compose-dev.yml up` _OS X & LINUX_
 ** Install these Plugin´s to ensure that everything works fine (in our case we are using IntelliJ as our IDE)
 *** Lombok
 **** Enable `val support`
