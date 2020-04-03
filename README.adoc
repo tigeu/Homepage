@@ -1,0 +1,53 @@
+= Homepage
+
+
+In this project, we as a team will independently develop a website from start to finish.
+Our goal is to expand our skills and competencies in the field of software development.
+
+
+
+
+== Installation
+* Clone
+** At first you should clone our project https://github.com/tigeu/Homepage.git[here].
+* Setup
+** Run the Docker-Compose File to ensure that the Database and Keycloak are running
+`docker-compose -f docker-compose-dev.yml up`
+** Install these Plugin´s to ensure that everything works fine (in our case we are using IntelliJ as our IDE)
+*** Lombok
+**** Enable `val support`
+**** Enable `@Builder support`
+**** Enable `@Delegate support`
+**** Enable `@Log support`
+*** Checkstyle
+**** select our Checkstyle.xml in the Configuration *Path:* `Homepage\website\config\checkstyle`
+* Start our project with your IDE
+
+== Built With
+* Java [13]
+* Gradle
+* Spring Boot
+* Keycloak
+
+
+== Features
+CONTENT
+
+
+== FAQ
+CONTENT
+
+
+== Team
+|===
+|Name, Forename
+
+|Geuer, Tim Leon
+|Amin, Snur
+|Column 1, Sébastien
+|Blank, Douglas
+|Siewert, Markus
+|===
+
+== License
+CONTENT
