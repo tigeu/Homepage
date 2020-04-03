@@ -42,9 +42,9 @@ CONTENT
 |===
 |Name, Forename
 
-|Geuer, Tim Leon
+|Geuer, Tim Leonard
 |Amin, Snur
-|Column 1, Sébastien
+|Croizé-Pourcelet, Sébastien
 |Blank, Douglas
 |Siewert, Markus
 |===
