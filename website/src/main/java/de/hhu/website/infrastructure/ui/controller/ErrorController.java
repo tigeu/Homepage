@@ -1,4 +1,4 @@
-package de.hhu.website.controller;
+package de.hhu.website.infrastructure.ui.controller;
 
 import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Controller;
