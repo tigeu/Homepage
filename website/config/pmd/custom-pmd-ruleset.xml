@@ -19,4 +19,7 @@
     <rule ref="category/java/performance.xml"/>
     <rule ref="category/java/security.xml"/>
 
+    <!-- Packages or classes that are explicitly excluded from the above rules: -->
+    <exclude-pattern>.*/de/hhu/website/WebsiteApplication.*</exclude-pattern>
+
 </ruleset>
