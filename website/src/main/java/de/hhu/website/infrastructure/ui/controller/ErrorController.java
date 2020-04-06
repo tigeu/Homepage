@@ -29,20 +29,23 @@ public class ErrorController implements org.springframework.boot.web.servlet.err
    */
   @RequestMapping("/error")
   public String handleError(final HttpServletRequest request) {
+    String errorType;
     final Object status = request.getAttribute(RequestDispatcher.ERROR_STATUS_CODE);
 
-    if (status != null) {
+    if (status == null) {
+      errorType = "error-500";
+    } else {
       final int statusCode = Integer.parseInt(status.toString());
-
       if (statusCode == HttpStatus.NOT_FOUND.value()) {
-        return "error-404";
+        errorType = "error-404";
       } else if (statusCode == HttpStatus.INTERNAL_SERVER_ERROR.value()) {
-        return "error-500";
+        errorType = "error-500";
       } else if (statusCode == HttpStatus.FORBIDDEN.value()) {
-        return "error-403";
+        errorType = "error-403";
+      } else {
+        errorType = "error-500";
       }
     }
-    return "error-500";
+    return errorType;
   }
-
 }
