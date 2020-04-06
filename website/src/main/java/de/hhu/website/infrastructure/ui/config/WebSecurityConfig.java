@@ -45,6 +45,7 @@ class WebSecurityConfig extends KeycloakWebSecurityConfigurerAdapter {
   }
 
   @Override
+  @SuppressWarnings("PMD.LawOfDemeter")
   protected void configure(final HttpSecurity http) throws Exception {
     super.configure(http);
     http.authorizeRequests()
