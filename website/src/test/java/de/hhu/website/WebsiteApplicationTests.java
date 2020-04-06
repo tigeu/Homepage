@@ -4,8 +4,6 @@ import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
 @SpringBootTest
-// Warning suppressed because this is a test class and doesn't need a constructor
-@SuppressWarnings("PMD.AtLeastOneConstructor")
 class WebsiteApplicationTests {
 
   @Test

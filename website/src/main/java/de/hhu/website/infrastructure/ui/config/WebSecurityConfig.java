@@ -20,8 +20,6 @@ import org.springframework.security.web.authentication.session.SessionAuthentica
 @Configuration
 @EnableWebSecurity
 @ComponentScan(basePackageClasses = KeycloakSecurityComponents.class)
-// Warning suppressed because this is a configuration class and does not need constructor
-@SuppressWarnings("PMD.AtLeastOneConstructor")
 class WebSecurityConfig extends KeycloakWebSecurityConfigurerAdapter {
 
   @Autowired

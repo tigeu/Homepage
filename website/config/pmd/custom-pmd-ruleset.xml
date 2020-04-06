@@ -10,7 +10,9 @@
     <!-- Your rules will come here -->
     <rule ref="category/java/errorprone.xml"/>
     <rule ref="category/java/bestpractices.xml"/>
-    <rule ref="category/java/codestyle.xml"/>
+    <rule ref="category/java/codestyle.xml">
+        <exclude name="AtLeastOneConstructor"/>
+    </rule>
 
     <!--
     "category/java/design.xml",
