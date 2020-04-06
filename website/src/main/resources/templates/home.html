@@ -1,10 +1,55 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en"
+      th:replace="~{base :: html(content=~{:: mycontent})}"
+      xmlns:th="http://www.thymeleaf.org" xmlns="http://www.w3.org/1999/html">
+
 <head>
+    <!-- meta tags-->
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
     <title>Home</title>
 </head>
 <body>
+<div class="container" id="content" th:fragment="mycontent">
+    <br>
+    <h1 class="display-4">Willkommen auf unserer Homepage!</h1>
+    <label class="lead">Auf dieser Webseite können Sie bestimmte Neuigkeiten rund um den Globus hochladen!</label>
+    <hr>
+
+    <button type="button" class="btn btn-primary pull-right"
+            id="newArticleButton" onclick="openForm('newArticleForm')" >Erstelle Sie einen neuen Artikel
+    </button>
+
+    <div class="form-group form-popup" id="newArticleForm">
+        <form>
+            <br>
+            <label for="titleArticle">Überschrift</label>
+            <input type="text" class="form-control" id="titleArticle"
+                   placeholder="Geben Sie hier Ihre Überschrift für den Artikel den Sie verfassen möchten an.">
+
+            <label for="categoryArticle">Zu Welcher Kategorie gehört Ihre Nachricht?</label>
+            <select class="form-control" id="categoryArticle">
+                <option>Welt</option>
+                <option>Unterhaltung</option>
+                <option>Sport</option>
+                <option>Wirtschaft</option>
+                <option>Technik</option>
+            </select>
+
+            <label for="contentArticle">Worum geht es in Ihrem Artikel?</label>
+            <textarea class="form-control" id="contentArticle"
+                      placeholder="Verfassen Sie hier Ihren Text."></textarea>
+        </form>
+        <br>
+        <button type="button" class="btn btn-primary pull-right"
+                id="submitArticleButton">Erstellen
+        </button>
+        <button type="button" class="btn btn-primary pull-right"
+                id="closeArticleButton" onclick="closeForm('newArticleForm')">Schließen
+        </button>
+    </div>
+</div>
 
 </body>
 </html>

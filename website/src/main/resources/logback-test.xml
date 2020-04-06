@@ -19,8 +19,8 @@
         </encoder>
     </appender>
 
-    <logger name="de.hhu.website.config" level="INFO"/>
-    <logger name="de.hhu.website.controller" level="INFO"/>
+    <logger name="de.hhu.website.infrastructure.ui.config" level="INFO"/>
+    <logger name="de.hhu.website.infrastructure.ui.controller" level="INFO"/>
 
     <root level="INFO">
         <appender-ref ref="FILE" />

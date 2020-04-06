@@ -1,4 +1,4 @@
-package de.hhu.website.config;
+package de.hhu.website.infrastructure.ui.config;
 
 import org.keycloak.adapters.springsecurity.KeycloakSecurityComponents;
 import org.keycloak.adapters.springsecurity.authentication.KeycloakAuthenticationProvider;

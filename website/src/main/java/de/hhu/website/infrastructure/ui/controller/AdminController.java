@@ -1,4 +1,4 @@
-package de.hhu.website.controller;
+package de.hhu.website.infrastructure.ui.controller;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;

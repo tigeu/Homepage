@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="en"
-      th:replace="~{base :: html(content=~{:: mycontent})}"
+      th:replace="~{error-base :: html(contentErrorBase=~{:: mycontentErrorBase})}"
       xmlns:th="http://www.thymeleaf.org">
 
 <head>
@@ -11,9 +11,8 @@
     <title>Admin</title>
 </head>
 <body>
-<div class="container" id="content" th:fragment="mycontent">
-    <h1 class="display-4">Adminbereich</h1>
-    <label class="lead">Willkommen im Adminbereich!</label>
+<div class="container" id="contentErrorBase" th:fragment="mycontentErrorBase">
+    <label class="lead">ERROR-403</label>
 
 </div>
 </body>
