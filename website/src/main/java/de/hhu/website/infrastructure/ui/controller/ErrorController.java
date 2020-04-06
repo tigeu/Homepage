@@ -15,6 +15,9 @@ import javax.servlet.http.HttpServletRequest;
 
 @Controller
 public class ErrorController implements org.springframework.boot.web.servlet.error.ErrorController {
+  private final transient int notFound = HttpStatus.NOT_FOUND.value(); //NOPMD
+  private final transient int intServErr = HttpStatus.INTERNAL_SERVER_ERROR.value(); //NOPMD
+  private final transient int forbidden = HttpStatus.FORBIDDEN.value(); //NOPMD
 
   @Override
   public String getErrorPath() {
@@ -36,11 +39,11 @@ public class ErrorController implements org.springframework.boot.web.servlet.err
       errorType = "error-500";
     } else {
       final int statusCode = Integer.parseInt(status.toString());
-      if (statusCode == HttpStatus.NOT_FOUND.value()) {
+      if (statusCode == notFound) {
         errorType = "error-404";
-      } else if (statusCode == HttpStatus.INTERNAL_SERVER_ERROR.value()) {
+      } else if (statusCode == intServErr) {
         errorType = "error-500";
-      } else if (statusCode == HttpStatus.FORBIDDEN.value()) {
+      } else if (statusCode == forbidden) {
         errorType = "error-403";
       } else {
         errorType = "error-500";
