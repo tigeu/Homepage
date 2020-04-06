@@ -17,11 +17,20 @@ import org.springframework.security.core.session.SessionRegistryImpl;
 import org.springframework.security.web.authentication.session.RegisterSessionAuthenticationStrategy;
 import org.springframework.security.web.authentication.session.SessionAuthenticationStrategy;
 
+/**
+ * Standard configuration class needed to inject beans for Spring Boot.
+ *
+ * @author Leon Geuer
+ */
+
 @Configuration
 @EnableWebSecurity
 @ComponentScan(basePackageClasses = KeycloakSecurityComponents.class)
 class WebSecurityConfig extends KeycloakWebSecurityConfigurerAdapter {
 
+  /**
+   * TODO: write documentation.
+   */
   @Autowired
   public void configureGlobal(final AuthenticationManagerBuilder auth) {
     final KeycloakAuthenticationProvider keyclAuthProv = keycloakAuthenticationProvider();
@@ -43,12 +52,12 @@ class WebSecurityConfig extends KeycloakWebSecurityConfigurerAdapter {
         .permitAll();
   }
 
-  /*
+  /**
    * Declaring this class enables us to use the Spring specific
    * {@link org.springframework.security.access.annotation.Secured} annotation
    * or the JSR-250 Java Standard
    * {@link javax.annotation.security.RolesAllowed} annotation
-   * for Role-based authorization
+   * for Role-based authorization.
    */
   @Configuration
   @EnableGlobalMethodSecurity(

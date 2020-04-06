@@ -6,8 +6,17 @@ import org.springframework.security.access.annotation.Secured;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 
+/**
+ * Standard controller class: manages all requests that pertain to the role admin.
+ *
+ * @author Leon Geuer / Sébastien Croizé-Pourcelet
+ */
+
 @Controller
 public class AdminController {
+  /**
+   * LOGGER field required for logging framework slf4j/logback.
+   */
   private static final Logger LOGGER = LoggerFactory.getLogger(AdminController.class);
 
   /**

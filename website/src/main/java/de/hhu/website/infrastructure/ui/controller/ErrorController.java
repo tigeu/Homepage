@@ -7,6 +7,12 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import javax.servlet.RequestDispatcher;
 import javax.servlet.http.HttpServletRequest;
 
+/**
+ * Controller class that handles all errors and exceptions.
+ *
+ * @author Snur Amin / Leon Geuer
+ */
+
 @Controller
 public class ErrorController implements org.springframework.boot.web.servlet.error.ErrorController {
 
@@ -15,7 +21,8 @@ public class ErrorController implements org.springframework.boot.web.servlet.err
     return "/error";
   }
 
-  /** This method is handling some basic errors, which could occur during browsing.
+  /**
+   * This method is handling some basic errors, which could occur during browsing.
    *
    * @param request this returns the ERROR-CODE.
    * @return this returns the appropriate html-view.
