@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en"
+      th:replace="~{base :: html(content=~{:: mycontent})}"
+      xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <!-- meta tags-->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <title>Admin</title>
+</head>
+<body>
+<div class="container" id="content" th:fragment="mycontent">
+    <h1 class="display-4">Adminbereich</h1>
+    <label class="lead">Willkommen im Adminbereich!</label>
+
+</div>
+</body>
+</html>

@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en"
+      th:replace="~{error-base :: html(contentErrorBase=~{:: mycontentErrorBase})}"
+      xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <!-- meta tags-->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <title>Admin</title>
+</head>
+<body>
+<div class="container" id="contentErrorBase" th:fragment="mycontentErrorBase">
+    <label class="lead">ERROR-403</label>
+
+</div>
+</body>
+</html>
