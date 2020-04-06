@@ -70,18 +70,8 @@ checkstyleTest {
 
 apply plugin: 'pmd'
 pmd {
-    ruleSets = [
-            "category/java/errorprone.xml",
-            "category/java/bestpractices.xml",
-            "category/java/codestyle.xml",
-            /*
-            "category/java/design.xml",
-            "category/java/documentation.xml",
-            "category/java/multithreading.xml",
-            "category/java/performance.xml",
-            "category/java/security.xml"
-            */
-    ]
+    ruleSetFiles = files("config/pmd/custom-pmd-ruleset.xml")
+    ruleSets = []
 }
 
 test {

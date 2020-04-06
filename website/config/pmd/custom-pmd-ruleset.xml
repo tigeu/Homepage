@@ -1,0 +1,23 @@
+<?xml version="1.0"?>
+
+<ruleset name="Website Custom Rules">
+
+    <description>
+        My custom rules
+    </description>
+
+
+    <!-- Your rules will come here -->
+    <rule ref="category/java/errorprone.xml"/>
+    <rule ref="category/java/bestpractices.xml"/>
+    <rule ref="category/java/codestyle.xml"/>
+
+    <!--
+    "category/java/design.xml",
+    "category/java/documentation.xml",
+    "category/java/multithreading.xml",
+    "category/java/performance.xml",
+    "category/java/security.xml"
+    -->
+
+</ruleset>
