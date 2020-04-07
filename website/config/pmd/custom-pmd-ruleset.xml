@@ -1,0 +1,25 @@
+<?xml version="1.0"?>
+
+<ruleset name="Website Custom Rules">
+
+    <description>
+        My custom rules
+    </description>
+
+
+    <!-- Our selected rules: -->
+    <rule ref="category/java/errorprone.xml"/>
+    <rule ref="category/java/bestpractices.xml"/>
+    <rule ref="category/java/codestyle.xml">
+        <exclude name="AtLeastOneConstructor"/>
+    </rule>
+    <rule ref="category/java/design.xml"/>
+    <rule ref="category/java/documentation.xml"/>
+    <rule ref="category/java/multithreading.xml"/>
+    <rule ref="category/java/performance.xml"/>
+    <rule ref="category/java/security.xml"/>
+
+    <!-- Packages or classes that are explicitly excluded from the above rules: -->
+    <exclude-pattern>.*/de/hhu/website/WebsiteApplication.*</exclude-pattern>
+
+</ruleset>

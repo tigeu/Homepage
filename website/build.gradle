@@ -13,14 +13,8 @@ spotbugs {
 }
 
 tasks.withType(com.github.spotbugs.SpotBugsTask) {
-    reports {
-        html {
-            enabled = true
-        }
-        xml {
-            enabled = false
-        }
-    }
+    reports.xml.enabled = false
+    reports.html.enabled = true
 }
 
 group = 'de.hhu'
@@ -72,6 +66,12 @@ checkstyleMain {
 }
 checkstyleTest {
     source = 'src/test/java'
+}
+
+apply plugin: 'pmd'
+pmd {
+    ruleSetFiles = files("config/pmd/custom-pmd-ruleset.xml")
+    ruleSets = []
 }
 
 test {
